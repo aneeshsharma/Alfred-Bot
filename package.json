@@ -1,0 +1,24 @@
+{
+  "name": "alfred",
+  "version": "0.1.0",
+  "description": "Alfred the bot",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "debug": "nodemon index.js"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "Anish Sharma",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "discord.js": "^13.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
