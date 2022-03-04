@@ -9,6 +9,8 @@ const prefix = "-";
 
 const inspiroAPI = "https://inspirobot.me/api?generate=true";
 
+const defaultReply = "https://tenor.com/view/arrey-kehna-kya-chahte-ho-what-is-machine-scene-engineering-3idiots-gif-21332889";
+
 client.on("messageCreate", (message) => {
     if (message.author.bot) return;
 
@@ -20,9 +22,7 @@ client.on("messageCreate", (message) => {
 
     if (command === "ping") {
         message.channel.send(`Pong! ${message.author}`);
-    }
-
-    if (command === "inspire") {
+    } else if (command === "inspire") {
         axios.get(inspiroAPI).then((response) => {
             const image_uri = response.data;
             message.channel.send(`${image_uri}`);
@@ -30,6 +30,8 @@ client.on("messageCreate", (message) => {
             console.log(err);
             message.reply("X_X");
         });
+    } else {
+        message.reply(`${defaultReply}`);
     }
 });
 
